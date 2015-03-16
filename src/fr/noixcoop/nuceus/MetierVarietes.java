@@ -74,8 +74,14 @@ public class MetierVarietes {
 	 * @return true si l'ajout s'est déroulé avec succès
 	 */
 	public boolean ajouter(Variete variete){
-		return false;
-		// Votre code ici
+		boolean result = false;
+		for(Variete uneVariete : varietes){
+			if(!uneVariete.equals(variete)){
+				varietes.add(variete);
+				result = true;
+			}
+		}
+		return result;
 	}
 
 	/** Modifier les caractéristiques d'une variété
