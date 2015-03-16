@@ -1,4 +1,4 @@
-package fr.nuceus02.project;
+package fr.noixcoop.nuceus;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
