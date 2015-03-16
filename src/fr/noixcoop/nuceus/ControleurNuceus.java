@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ControleurNuceus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private MetierVarietes metierVarietes ;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -18,6 +19,10 @@ public class ControleurNuceus extends HttpServlet {
     public ControleurNuceus() {
         super();
         // TODO Auto-generated constructor stub
+    }
+    
+    public void init() throws ServletException {
+    	metierVarietes = new MetierVarietes();
     }
 
 	/**
