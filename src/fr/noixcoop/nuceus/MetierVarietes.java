@@ -75,12 +75,12 @@ public class MetierVarietes {
 	 */
 	public boolean ajouter(Variete variete){
 		boolean result = false;
-		for(Variete uneVariete : varietes){
-			if(!uneVariete.equals(variete)){
-				varietes.add(variete);
-				result = true;
-			}
-		}
+		System.out.println(varietes.toString());
+		Variete v = consulter(variete.getLibelle());
+		if(v == null)
+			
+			result= true;
+		
 		return result;
 	}
 

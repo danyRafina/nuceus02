@@ -5,6 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("/nuceus/main"); %>
+<% response.sendRedirect("/nuceus02/main"); %>
 </body>
 </html>

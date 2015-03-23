@@ -54,10 +54,14 @@ public class ControleurNuceus extends HttpServlet {
 				aocObtenu =true;
 			}
 			boolean ajouterOk = metierVarietes.ajouter(new Variete(libelle,aocObtenu));
-			if(ajouterOk)
-				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueListe.jsp").forward(request,response);
+			if(ajouterOk) {
+				request.setAttribute("libelle",libelle);
+				request.setAttribute("aoc",aoc);
+				System.out.println("ADA"+metierVarietes.consulter().toString());
+				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueResultatAjout.jsp").forward(request,response);
+			}
 			else 
-				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueListe.jsp").forward(request,response);
+				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueResultatAjout.jsp").forward(request,response);
 				
 		}
 	}
