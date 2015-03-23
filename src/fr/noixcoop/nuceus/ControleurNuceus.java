@@ -1,6 +1,7 @@
 package fr.noixcoop.nuceus;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +30,36 @@ public class ControleurNuceus extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String action = request.getParameter("action");
+		if(action == null)
+			action ="visualiser";
+		
+		if(action.equals("visualiser") || action.equals("annulerAjout")) {
+			request.setAttribute("varietes",metierVarietes.consulter());
+			getServletContext().getRequestDispatcher("/WEB-INF/vues/vueListe.jsp").forward(request,response);
+		}
+		else if(action.equals("renseignerAjout")) 
+			getServletContext().getRequestDispatcher("/WEB-INF/vues/vueFormulaireAjout.jsp").forward(request,response);
+		
+		else if (action.equals("ajouter")) {
+			String libelle = request.getParameter("libelle");
+			String aoc = request.getParameter("aoc");
+			boolean aocObtenu = false;
+			if(aoc == null ){
+				aoc = "non";
+				aocObtenu = false;
+			}
+			else {
+				aoc="oui";
+				aocObtenu =true;
+			}
+			boolean ajouterOk = metierVarietes.ajouter(new Variete(libelle,aocObtenu));
+			if(ajouterOk)
+				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueListe.jsp").forward(request,response);
+			else 
+				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueListe.jsp").forward(request,response);
+				
+		}
 	}
 
 	/**
