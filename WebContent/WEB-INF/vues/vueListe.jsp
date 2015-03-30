@@ -94,7 +94,7 @@
 		</div>
 				
 		<script src="style/js/jQuery.js"></script>
-<script src="style/js/bootstrap.js"></script>
+		<script src="style/js/bootstrap.js"></script>
 
 		
 

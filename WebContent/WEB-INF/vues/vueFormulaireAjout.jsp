@@ -10,13 +10,28 @@
 <title>Ajouter une variété</title>
 </head>
 <body>
-	<form class="form-group input-group" method="get">
-		<label for="libelle">Libellé : </label> <input class="input"
-			type="text" id="libelle" name="libelle" value="" size="20" /> <label
-			for="aoc">AOC : </label> <input type="checkbox" id="aoc" name="aoc"
-			value="aoc" /> <input type="hidden" name="action" value="ajouter" />
-		<input class="input" type="submit" value="Ajouter" />
-	</form>
-	<a href="?action=annulerAjout">Annuler</a>
+
+	<nav class="navbar navbar-header navbar-fixed-top navbar-inverse">
+		<div class="navbar-brand black">Ajouter une variété</div>
+		<ul class="nav navbar-nav navbar-right" style="margin-right: 15px">
+			<li class="active"><a href="?action=annulerAjout">Annuler</a></li>
+		</ul>
+	</nav>
+	<div class="container" style="margin-top: 70px !important">
+		<div class="row">
+			<div class="col-md-12">
+				<form class="form-group" method="get">
+					<label for="libelle">Libellé : </label> <input class="input"
+						type="text" id="libelle" name="libelle" value="" size="20" /> <label
+						for="aoc">AOC : </label> <input type="checkbox" id="aoc"
+						name="aoc" value="aoc" /> <input type="hidden" name="action"
+						value="ajouter" /> <input class="input" type="submit"
+						value="Ajouter" />
+
+				</form>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
