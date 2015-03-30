@@ -75,10 +75,9 @@ public class MetierVarietes {
 	 */
 	public boolean ajouter(Variete variete){
 		boolean result = false;
-		System.out.println(varietes.toString());
 		Variete v = consulter(variete.getLibelle());
 		if(v == null)
-			
+			varietes.add(variete);
 			result= true;
 		
 		return result;
